@@ -1,25 +1,37 @@
-<h1>Controle de Vendas</h1>
+<div class="container">
+	<div class="panel panel-info content-box">
+		
+		<div class="panel-heading">
+			<h1 class="panel-title">Cadastro de Venda</h1>
+		</div>
+		
+		<div class="panel-body">
+			<%= form_for :sales, url: sales_path do |f| %>
+			 	
+			 	<p>
+			    	<%= f.label :perfume %><br>
+			    	<%= f.text_field :perfume_name, class: "form-control", type:"text", placeholder: "Nome do Perfume" %>
+			 	</p>
 
-<%= form_for :sales, url: sales_path do |f| %>
- 	
- 	<p>
-    	<%= f.label :perfume %><br>
-    	<%= f.text_field :perfume_name %>
- 	</p>
+			 	<p>
+			    	<%= f.label :produto_entregue_ao_cliente %>
+			    	<%= f.text_field :delivered_product, type:"radio", value:"true" %><span>Sim</span>
+			    	<%= f.text_field :delivered_product, type:"radio", value:"false" %><span>Não</span>
+			 	</p>
 
- 	<p>
-    	<%= f.label :produto_entregue? %><br>
-    	<%= f.text_field :delivered_product %>
- 	</p>
+			 	<p>
+			    	<%= f.label :dinheiro_foi_recebido %>
+			    	<%= f.text_field :money_received, type:"radio", value:"true" %><span>Sim</span>
+			    	<%= f.text_field :money_received, type:"radio", value:"false" %><span>Não</span>
+			    </p>
+			    
+			    <%= f.submit "Cadastrar", class: "btn btn-default btn-primary" %>
+			    <%= link_to 'Voltar para Controle de Vendas', sales_path, class: "btn btn-default" %>
 
- 	<p>
-    	<%= f.label :dinheiro_recebido? %><br>
-    	<%= f.text_field :money_received %>
- 	</p>
+			<% end %>
 
- 	<p>
-    	<%= f.submit %>
- 	</p>
-<% end %>
+		</div>
+	</div>	
 
-<%= link_to 'Voltar', sales_path %>
+	
+</div>

@@ -1,21 +1,34 @@
-<h1>Suas vendas</h1>
+<div class="container">
+	
+	<div class="panel panel-info content-box">
+		
+		<div class="panel-heading">
+			<h1 class="panel-title">Controle de Vendas</h1>
+		</div>
 
-<table>
-	<tr>
-		<th>Nome do Perfume</th>
-		<th>Produto foi entregue</th>
-		<th>Cliente pagou</th>
-	</tr>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+					<tr>
+						<th>Nome do Perfume</th>
+						<th>Produto foi entregue</th>
+						<th>Cliente pagou</th>
+						<th></th>
+					</tr>
 
-	<% @sales.each do |sale| %>
-		<tr>
-			<td><%= sale.perfume_name %></td>
-			<td><%= sale.delivered_product %></td>
-			<td><%= sale.money_received %></td>
-			<td><%= link_to 'Show', sale_path(sale) %></td>
-		</tr>
-	<% end %>
-</table>
-<br>
-<br>
-<%= link_to 'Cadastrar nova conta', new_sale_path %>
+					<% @sales.each do |sale| %>
+						<tr>
+							<td><%= link_to sale.perfume_name, sale_path(sale) %></td>
+							<td><%= sale.delivered_product %></td>
+							<td><%= sale.money_received %></td>
+						
+						</tr>
+					<% end %>
+				</table>
+			</div>
+
+			<%= link_to 'Cadastrar nova conta', new_sale_path, class: "btn btn-default btn-primary" %>
+		</div>
+	</div>
+
+</div>

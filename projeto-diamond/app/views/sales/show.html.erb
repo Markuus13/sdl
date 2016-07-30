@@ -1,16 +1,22 @@
-<p>
-	<strong>Perfume</strong>
-	<%= @sale.perfume_name %>
-</p>
+<div class="container">
+	<div class="content-box">	
+		<p>
+			<strong>Perfume</strong>
+			<%= @sale.perfume_name %>
+		</p>
 
-<p>
-	<strong>Produto entregue ao cliente:</strong>
-	<%= @sale.delivered_product %>
-</p>
+		<p>
+			<strong>Produto entregue ao cliente:</strong>
+			<%= @sale.delivered_product %>
+		</p>
 
-<p>
-	<strong>Produto entregue ao cliente:</strong>
-	<%= @sale.money_received %>
-</p>
+		<p>
+			<strong>Produto entregue ao cliente:</strong>
+			<%= @sale.money_received %>
+		</p>
 
-<%= link_to 'Voltar', new_sale_path %>
+
+		<%= link_to 'Cadastrar nova venda', new_sale_path, :class => "btn btn-default btn-primary" %>
+		<%= link_to 'Voltar para Controle de Vendas', sales_path, :class => "btn btn-default" %>
+	</div>
+</div>
