@@ -1,10 +1,6 @@
 <h1>Controle de Vendas</h1>
 
 <%= form_for :sales, url: sales_path do |f| %>
-	<p>
-	    <%= f.label :nome_do_cliente %><br>
-	    <%= f.text_field :client_name %>
-	</p>
  	
  	<p>
     	<%= f.label :perfume %><br>
@@ -18,7 +14,7 @@
 
  	<p>
     	<%= f.label :dinheiro_recebido? %><br>
-    	<%= f.text_field :money_reiceved %>
+    	<%= f.text_field :money_received %>
  	</p>
 
  	<p>
