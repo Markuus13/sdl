@@ -1,0 +1,25 @@
+<h1>Controle de Vendas</h1>
+
+<%= form_for :sales, url: sales_path do |f| %>
+ 	
+ 	<p>
+    	<%= f.label :perfume %><br>
+    	<%= f.text_field :perfume_name %>
+ 	</p>
+
+ 	<p>
+    	<%= f.label :produto_entregue? %><br>
+    	<%= f.text_field :delivered_product %>
+ 	</p>
+
+ 	<p>
+    	<%= f.label :dinheiro_recebido? %><br>
+    	<%= f.text_field :money_received %>
+ 	</p>
+
+ 	<p>
+    	<%= f.submit %>
+ 	</p>
+<% end %>
+
+<%= link_to 'Voltar', sales_path %>
