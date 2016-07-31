@@ -11,7 +11,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
-gem 'pg'
+
+group :production do
+	gem 'pg'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri
