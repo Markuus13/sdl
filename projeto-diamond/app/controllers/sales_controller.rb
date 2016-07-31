@@ -3,10 +3,19 @@ class SalesController < ApplicationController
   	@sales = Sale.all
   end
 
+  def edit
+    @sale = Sale.find(params[:id])
+  end
+
+
   def create
   	@sale = Sale.new(sale_params)
-  	@sale.save
-  	redirect_to @sale
+
+    if @sale.save
+  	 redirect_to @sale
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -14,10 +23,11 @@ class SalesController < ApplicationController
   end
 
   def new
+    @sale = Sale.new
   end
 
   private
   	def sale_params
-  		params.require(:sales).permit(:perfume_name,:delivered_product,:money_received)
+  		params.require(:sales).permit(:product_name,:delivered_product,:money_received)
 	end
 end

@@ -1,22 +1,31 @@
 <div class="container">
-	<div class="content-box">	
-		<p>
-			<strong>Perfume</strong>
-			<%= @sale.perfume_name %>
-		</p>
+	<div class="panel panel-info content-box">
+		
+		<div class="panel-heading">
+			<h1 class="panel-title">[NOME DO PRODUTO]</h1>
+		</div>
 
-		<p>
-			<strong>Produto entregue ao cliente:</strong>
-			<%= @sale.delivered_product %>
-		</p>
+		<div class="panel-body">
+			<div class="content">		
+				<p>
+					<strong>Produto</strong>
+					<%= @sale.product_name %>
+				</p>
 
-		<p>
-			<strong>Produto entregue ao cliente:</strong>
-			<%= @sale.money_received %>
-		</p>
+				<p>
+					<strong>Produto entregue ao cliente:</strong>
+					<%= @sale.delivered_product? %>
+				</p>
 
+				<p>
+					<strong>Produto entregue ao cliente:</strong>
+					<%= @sale.money_received? %>
+				</p>
+			</div>
 
-		<%= link_to 'Cadastrar nova venda', new_sale_path, :class => "btn btn-default btn-primary" %>
-		<%= link_to 'Voltar para Controle de Vendas', sales_path, :class => "btn btn-default" %>
+			<%= link_to 'Cadastrar nova venda', new_sale_path, :class => "btn btn-default btn-primary" %>
+			<%= link_to 'Voltar para Controle de Vendas', sales_path, :class => "btn btn-default" %>
+		</div>
+
 	</div>
 </div>

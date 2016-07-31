@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20160730131120) do
 
   create_table "sales", force: :cascade do |t|
-    t.string   "perfume_name"
+    t.string   "product_name"
     t.boolean  "delivered_product"
     t.boolean  "money_received"
     t.datetime "created_at",        null: false

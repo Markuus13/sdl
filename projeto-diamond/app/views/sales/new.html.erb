@@ -7,10 +7,23 @@
 		
 		<div class="panel-body">
 			<%= form_for :sales, url: sales_path do |f| %>
-			 	
+			 	<% if @sale.errors.any? %>
+			 		<div id="error_explanation">
+			 			<h3>
+			 				<%= pluralize(@sale.errors.count, "erro") %> encontrado(s). O produto não pôde ser salvo.
+			 			</h3>
+			 			<ul>
+			 				<% @sale.errors.full_messages.each do |msg| %>
+			 					<li><%= msg %></li>
+			 				<% end %>
+			 			</ul>
+			 		</div>
+			 	<% end %>
+
+
 			 	<p>
-			    	<%= f.label :perfume %><br>
-			    	<%= f.text_field :perfume_name, class: "form-control", type:"text", placeholder: "Nome do Perfume" %>
+			    	<%= f.label :produto %><br>
+			    	<%= f.text_field :product_name, class: "form-control", type:"text", placeholder: "Produto vendido" %>
 			 	</p>
 
 			 	<p>
@@ -27,9 +40,7 @@
 			    
 			    <%= f.submit "Cadastrar", class: "btn btn-default btn-primary" %>
 			    <%= link_to 'Voltar para Controle de Vendas', sales_path, class: "btn btn-default" %>
-
 			<% end %>
-
 		</div>
 	</div>	
 

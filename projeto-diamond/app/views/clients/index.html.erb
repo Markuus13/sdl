@@ -1,2 +1,34 @@
-<h1>Clients#index</h1>
-<p>Find me in app/views/clients/index.html.erb</p>
+<div class="container">
+	
+	<div class="panel panel-info content-box">
+		
+		<div class="panel-heading">
+			<h1 class="panel-title">Controle de Clientes</h1>
+		</div>
+
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+					<tr>
+						<th>Nome do Cliente</th>
+						<th>Telefone</th>
+						<th>Data de Nascimento</th>
+						<th>Data da última compra</th>
+					</tr>
+
+					<% @clients.each do |client| %>
+						<tr>
+							<td><%= link_to client.product_name, sale_path(sale) %></td>
+							<td><%= client.delivered_product? %></td>
+							<td><%= client.money_received? %></td>
+						
+						</tr>
+					<% end %>
+				</table>
+			</div>
+
+			<%= link_to 'Cadastrar nova conta', new_sale_path, class: "btn btn-default btn-primary" %>
+		</div>
+	</div>
+
+</div>

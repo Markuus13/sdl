@@ -10,7 +10,7 @@
 			<div class="table-responsive">
 				<table class="table">
 					<tr>
-						<th>Nome do Perfume</th>
+						<th>Nome do Produto</th>
 						<th>Produto foi entregue</th>
 						<th>Cliente pagou</th>
 						<th></th>
@@ -18,9 +18,9 @@
 
 					<% @sales.each do |sale| %>
 						<tr>
-							<td><%= link_to sale.perfume_name, sale_path(sale) %></td>
-							<td><%= sale.delivered_product %></td>
-							<td><%= sale.money_received %></td>
+							<td><%= link_to sale.product_name, sale_path(sale) %></td>
+							<td><%= sale.delivered_product? %></td>
+							<td><%= sale.money_received? %></td>
 						
 						</tr>
 					<% end %>

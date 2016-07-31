@@ -1,3 +1,11 @@
 .content-box {
 	margin: 50px;
 }
+
+.content {
+	margin-bottom: 25px;
+}
+
+.error-message {
+	border-radius: 10px;
+}
