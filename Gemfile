@@ -15,6 +15,7 @@ gem 'autoprefixer-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'sqlite3'
 end
 
 group :development do
