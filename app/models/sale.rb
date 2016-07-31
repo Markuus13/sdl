@@ -1,7 +1,5 @@
 class Sale < ApplicationRecord
-	validates :product_name, presence: true
-	validates :delivered_product, presence: true
-	validates :money_received, presence: true
+	validates :product_name, presence: true, length: { minimum: 3}
 
 	def delivered_product?
 		self.delivered_product ? "Sim" : "Não"
