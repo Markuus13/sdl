@@ -13,8 +13,6 @@ rerun.txt
 pickle-email-*.html
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
-MyApp::Application.config.secret_token = ENV['SECRET_TOKEN']
-config/secrets.yml
 
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
