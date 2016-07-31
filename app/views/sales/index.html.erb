@@ -25,7 +25,10 @@
 							<td><%= link_to sale.product_name, sale_path(sale) %></td>
 							<td><%= sale.delivered_product? %></td>
 							<td><%= sale.money_received? %></td>
-							 <td><%= link_to 'Editar', edit_sale_path(sale), class: "btn btn-default btn-info" %></td>
+							<td>
+								<%= link_to 'Editar', edit_sale_path(sale), class: "btn btn-default btn-info" %>
+								<%= link_to 'Remover', sale_path(sale), method: :delete, data: {confirm: 'Tem certeza?'}, class: "btn btn-default btn-danger" %>
+							</td>
 						</tr>
 					<% end %>
 				</table>

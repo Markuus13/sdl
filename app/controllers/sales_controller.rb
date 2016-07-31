@@ -1,6 +1,15 @@
 class SalesController < ApplicationController
+  
   def index
   	@sales = Sale.all
+  end
+
+  def show
+    @sale = Sale.find(params[:id])
+  end
+
+  def new
+    @sale = Sale.new
   end
 
   def edit
@@ -27,12 +36,11 @@ class SalesController < ApplicationController
     end
   end
 
-  def show
-  	@sale = Sale.find(params[:id])
-  end
+  def destroy
+    @sale = Sale.find(params[:id])
+    @sale.destroy
 
-  def new
-    @sale = Sale.new
+    redirect_to sales_path
   end
 
   private
