@@ -1,46 +1,12 @@
 <div class="container">
-	<div class="panel panel-info content-box">
+	<div class="panel panel-primary content-box">
 		
 		<div class="panel-heading">
 			<h1 class="panel-title">Cadastro de Venda</h1>
 		</div>
 		
 		<div class="panel-body">
-			<%= form_for :sales, url: sales_path do |f| %>
-			 	<% if @sale.errors.any? %>
-			 		<div id="error_explanation">
-			 			<h3>
-			 				<%= pluralize(@sale.errors.count, "erro") %> encontrado(s). O produto não pôde ser salvo.
-			 			</h3>
-			 			<ul>
-			 				<% @sale.errors.full_messages.each do |msg| %>
-			 					<li><%= msg %></li>
-			 				<% end %>
-			 			</ul>
-			 		</div>
-			 	<% end %>
-
-
-			 	<p>
-			    	<%= f.label :produto %><br>
-			    	<%= f.text_field :product_name, class: "form-control", type:"text", placeholder: "Produto vendido" %>
-			 	</p>
-
-			 	<p>
-			    	<%= f.label :produto_entregue_ao_cliente %>
-			    	<%= f.text_field :delivered_product, type:"radio", value:"true" %><span>Sim</span>
-			    	<%= f.text_field :delivered_product, type:"radio", value:"false" %><span>Não</span>
-			 	</p>
-
-			 	<p>
-			    	<%= f.label :dinheiro_foi_recebido %>
-			    	<%= f.text_field :money_received, type:"radio", value:"true" %><span>Sim</span>
-			    	<%= f.text_field :money_received, type:"radio", value:"false" %><span>Não</span>
-			    </p>
-			    
-			    <%= f.submit "Cadastrar", class: "btn btn-default btn-primary" %>
-			    <%= link_to 'Voltar para Controle de Vendas', sales_path, class: "btn btn-default" %>
-			<% end %>
+			<%= render 'form' %>
 		</div>
 	</div>	
 

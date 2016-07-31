@@ -7,7 +7,6 @@ class SalesController < ApplicationController
     @sale = Sale.find(params[:id])
   end
 
-
   def create
   	@sale = Sale.new(sale_params)
 
@@ -15,6 +14,16 @@ class SalesController < ApplicationController
   	 redirect_to @sale
     else
       render 'new'
+    end
+  end
+
+  def update
+    @sale = Sale.find(params[:id])
+
+    if @sale.update(sale_params)
+      redirect_to @sale
+    else
+      render 'edit'
     end
   end
 
@@ -28,6 +37,6 @@ class SalesController < ApplicationController
 
   private
   	def sale_params
-  		params.require(:sales).permit(:product_name,:delivered_product,:money_received)
+  		params.require(:sale).permit(:product_name,:delivered_product,:money_received)
 	end
 end

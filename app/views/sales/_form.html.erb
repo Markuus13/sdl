@@ -1,0 +1,35 @@
+<%= form_for @sale do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@sale.errors.count, "error") %> encontrado(s). O produto não pôde ser salvo.
+      </h2>
+      <ul>
+        <% @sale.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :produto %><br>
+	<%= f.text_field :product_name, class: "form-control", type:"text", placeholder: "Produto vendido" %>
+  </p>
+ 
+  <p>
+    <%= f.label :produto_entregue_ao_cliente %>
+    <%= f.radio_button :delivered_product, true %><span>Sim</span>
+    <%= f.radio_button :delivered_product, false %><span>Não</span>
+  </p>
+
+  <p>
+	<%= f.label :dinheiro_foi_recebido %>
+	<%= f.radio_button :money_received, true %><span>Sim</span>
+	<%= f.radio_button :money_received, false %><span>Não</span>
+  </p>
+  <p>
+    <%= f.submit "Salvar venda",  class: "btn btn-default btn-primary" %>
+ 	<%= link_to 'Ir para Controle de Vendas', sales_path, class: "btn btn-default"%>
+  </p>
+<% end %>

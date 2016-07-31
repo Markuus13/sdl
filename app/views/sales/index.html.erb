@@ -1,17 +1,18 @@
 <div class="container">
 	
-	<div class="panel panel-info content-box">
+	<div class="panel panel-primary content-box">
 		
 		<div class="panel-heading">
 			<h1 class="panel-title">Controle de Vendas</h1>
 		</div>
 
 		<div class="panel-body">
-			<%= link_to 'Cadastrar nova conta', new_sale_path, class: "btn btn-default btn-primary" %>
+			<%= link_to 'Cadastrar nova venda', new_sale_path, class: "btn btn-default btn-primary" %>
 			<br><br>
 			<div class="table-responsive">
 				<table class="table">
 					<tr>
+						<th>Nº da venda</th>
 						<th>Nome do Produto</th>
 						<th>Produto foi entregue</th>
 						<th>Cliente pagou</th>
@@ -20,10 +21,11 @@
 
 					<% @sales.each do |sale| %>
 						<tr>
+							<td><%= sale.id %></td>
 							<td><%= link_to sale.product_name, sale_path(sale) %></td>
 							<td><%= sale.delivered_product? %></td>
 							<td><%= sale.money_received? %></td>
-						
+							 <td><%= link_to 'Editar', edit_sale_path(sale), class: "btn btn-default btn-info" %></td>
 						</tr>
 					<% end %>
 				</table>
